@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 export default function TextForm(props) {
+
   const handleUpClick = () => {
     setText(text.toUpperCase());
     props.showAlert('Text changed to uppercase.','success');
@@ -47,24 +48,24 @@ export default function TextForm(props) {
             placeholder={props.textHeader}
           ></textarea>
         </div>
-        <button className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>
+        <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>
           Convert to Uppercase
         </button>
-        <button className="btn btn-secondary mx-1 my-1" onClick={handleLOClick}>
+        <button  disabled={text.length===0} className="btn btn-secondary mx-1 my-1" onClick={handleLOClick}>
           Convert to Lowercase
         </button>
-        <button className="btn btn-light mx-1 my-1" onClick={handleClearClick}>
+        <button disabled={text.length===0} className="btn btn-light mx-1 my-1" onClick={handleClearClick}>
           Clear Text
         </button>
 
-        <button
+        <button disabled={text.length===0}
           className="btn btn-warning mx-1 my-1"
           onClick={handleExtraSpaceClick}
         >
           Remove Extra Spaces
         </button>
 
-        <button className="btn btn-info mx-1 my-1" onClick={handleCopyClick}>
+        <button disabled={text.length===0} className="btn btn-info mx-1 my-1" onClick={handleCopyClick}>
           Copy Selected Text
         </button>
       </div>

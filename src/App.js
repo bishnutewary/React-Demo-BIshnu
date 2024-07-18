@@ -49,14 +49,6 @@ function App() {
         toggleMOde={toggleMode}
       />
       <Alert alert={alert} />
-       {/* <div className="container my-3">
-        <TextForm
-          showAlert={showAlert}
-          textHeader="Enter Description"
-          mode={mode}
-        />
-      </div>  */}
-
       <div className="container">
         <Routes>
           <Route exact path="/" element={<TextForm
