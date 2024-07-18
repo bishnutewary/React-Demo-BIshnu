@@ -35,10 +35,10 @@ export default function TextForm(props) {
     <>
       <div>
         <div className="container mb-3">
-          <label htmlFor="txtBox" className="form-label" style={{color:props.mode==='light'?'#042743':'white'}}>
+          <label htmlFor="txtBox" className="form-label" style={{color:props.mode==='dark'?'white':'#042743'}}>
             {props.textHeader}
           </label>
-          <textarea style={{cursor: 'pointer',backgroundColor:props.mode==='light'?'white':'grey', color:props.mode==='light'?'#042743':'white'}}
+          <textarea style={{cursor: 'pointer',backgroundColor:props.mode==='dark'?'#13466e':'white', color:props.mode==='dark'?'white':'#042743'}}
             className="form-control"
             value={text}
             onChange={handleOnChange}
@@ -47,32 +47,32 @@ export default function TextForm(props) {
             placeholder={props.textHeader}
           ></textarea>
         </div>
-        <button className="btn btn-primary mx-1" onClick={handleUpClick}>
+        <button className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>
           Convert to Uppercase
         </button>
-        <button className="btn btn-secondary mx-1" onClick={handleLOClick}>
+        <button className="btn btn-secondary mx-1 my-1" onClick={handleLOClick}>
           Convert to Lowercase
         </button>
-        <button className="btn btn-light mx-1" onClick={handleClearClick}>
+        <button className="btn btn-light mx-1 my-1" onClick={handleClearClick}>
           Clear Text
         </button>
 
         <button
-          className="btn btn-warning mx-1"
+          className="btn btn-warning mx-1 my-1"
           onClick={handleExtraSpaceClick}
         >
           Remove Extra Spaces
         </button>
 
-        <button className="btn btn-info mx-1" onClick={handleCopyClick}>
+        <button className="btn btn-info mx-1 my-1" onClick={handleCopyClick}>
           Copy Selected Text
         </button>
       </div>
       <div className="container my-3" style={{color:props.mode==='light'?'#042743':'white'}}>
         <h1>Your text summary</h1>
         <p>
-          {/* {text.length>0? text.split(" ").length: 0} words, {text.length} characters. */}
-          {text.length>0? text.trim().split(/[ ]+/).join(" ").split(" ").length: 0} words, {text.length} characters.
+          {/* {text.length>0? text.trim().split(/[ ]+/).join(" ").split(" ").length: 0} words, {text.length} characters. */}
+          {text.split(" ").filter((element)=>{return element.length!==0}).length} words, {text.length} characters.
         </p>
         <p>{text.length>0? 0.008 * text.split(" ").length : 0} Minutes to read</p>
       </div>

@@ -1,8 +1,8 @@
 import "./App.css";
 import React, { useState } from "react";
-// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Alert from "./components/Alert";
-// import About from "./components/About";
+import About from "./components/About";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 
@@ -40,7 +40,7 @@ function App() {
   };
   return (
     <>
-    {/* <Router> */}
+    <Router> 
       <Navbar
         pageTitle={menu[0]}
         homeText={menu[1]}
@@ -49,25 +49,25 @@ function App() {
         toggleMOde={toggleMode}
       />
       <Alert alert={alert} />
-       <div className="container my-3">
+       {/* <div className="container my-3">
         <TextForm
           showAlert={showAlert}
           textHeader="Enter Description"
           mode={mode}
         />
-      </div> 
+      </div>  */}
 
-      {/* <div className="container">
+      <div className="container">
         <Routes>
           <Route exact path="/" element={<TextForm
               showAlert={showAlert}
               textHeader="Enter Description"
               mode={mode}
             />}/>
-          <Route exact path="/about" element={<About />}/>
+          <Route exact path="/about" element={<About mode={mode}/>}/>
         </Routes>
       </div>
-      </Router> */}
+      </Router> 
     </>
   );
 }
